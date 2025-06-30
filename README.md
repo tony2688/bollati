@@ -19,11 +19,152 @@ Esta landing page corporativa está diseñada para **Bollati y Asociados S.R.L.*
 
 ## 🛠️ Stack Tecnológico
 
-- **Backend**: Python con Flask
+- **Backend**: Python con Flask + Gunicorn
 - **Frontend**: Tailwind CSS + JavaScript vanilla
 - **Tipografías**: Roboto Condensed + Source Sans Variable
 - **Iconos**: Font Awesome 6
+- **Despliegue**: Render (Production Ready)
 - **Integración**: APIs REST preparadas
+
+## 🚀 Despliegue en Railway (Sin Tarjeta de Crédito)
+
+Este proyecto está **listo para Railway.app** y configurado para desplegarse sin necesidad de tarjeta de crédito:
+
+### 🎯 Pasos para Desplegar en Railway:
+
+1. **Subir a GitHub**:
+   ```bash
+   git add .
+   git commit -m "Ready for Railway deployment"
+   git push origin main
+   ```
+
+2. **Conectar con Railway**:
+   - Ve a [railway.app](https://railway.app)
+   - Haz clic en "Start a New Project"
+   - Selecciona "Deploy from GitHub repo"
+   - Conecta tu repositorio
+   - Railway detectará automáticamente el `Procfile`
+
+3. **Configuración Automática**:
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `python app.py` (desde Procfile)
+   - **Python Version**: Detectada automáticamente
+
+### Variables de Entorno en Railway:
+```
+FLASK_ENV=production
+FLASK_DEBUG=False
+SECRET_KEY=tu-clave-secreta-muy-segura
+PORT=5000
+```
+
+### 💡 Ventajas de Railway:
+- ✅ **Sin tarjeta de crédito** para proyectos pequeños
+- ✅ **Deploy automático** desde GitHub
+- ✅ **HTTPS gratuito** incluido
+- ✅ **Dominio personalizado** disponible
+- ✅ **Logs en tiempo real**
+
+## 🔧 Desarrollo Local
+
+### 📋 Requisitos:
+- Python 3.8+
+- Git
+
+### 🚀 Instalación y Ejecución:
+```bash
+# 1. Clonar repositorio
+git clone https://github.com/tu-usuario/bollati.git
+cd bollati
+
+# 2. Crear entorno virtual
+python -m venv venv
+
+# 3. Activar entorno virtual
+# En Windows:
+venv\Scripts\activate
+# En Linux/Mac:
+source venv/bin/activate
+
+# 4. Instalar dependencias
+pip install -r requirements.txt
+
+# 5. Configurar variables de entorno
+copy .env.example .env     # Windows
+cp .env.example .env       # Linux/Mac
+
+# 6. Ejecutar aplicación
+python app.py
+```
+
+### 🌐 Acceder a la aplicación:
+- **Local**: http://localhost:5000
+- **Railway**: Tu URL será asignada automáticamente
+
+### 📤 Subir a GitHub:
+```bash
+# Inicializar repositorio (si es nuevo)
+git init
+git remote add origin https://github.com/tu-usuario/tu-repo.git
+
+# Subir cambios
+git add .
+git commit -m "Initial commit - Flask app ready for Railway"
+git push -u origin main
+```
+
+### 🛣️ Rutas Disponibles:
+- `/` - Landing page principal
+- `/about` - Información de la empresa (JSON)
+- `/api/contact` - Endpoint para formulario de contacto
+- `/api/testimonials` - Testimonios de clientes
+- `/api/portfolio` - Proyectos del portfolio
+
+## 🚂 Guía Completa para Railway
+
+### 🎯 Paso a Paso para Deploy:
+
+1. **Preparar el proyecto** (ya está listo):
+   - ✅ `requirements.txt` con Flask y dependencias
+   - ✅ `Procfile` con `web: python app.py`
+   - ✅ `.env.example` con variables necesarias
+   - ✅ `app.py` configurado para producción
+
+2. **Subir a GitHub**:
+   ```bash
+   git add .
+   git commit -m "Ready for Railway"
+   git push origin main
+   ```
+
+3. **Conectar con Railway**:
+   - Ir a [railway.app](https://railway.app)
+   - "Start a New Project" → "Deploy from GitHub repo"
+   - Seleccionar tu repositorio
+   - Railway detecta automáticamente la configuración
+
+4. **Configurar variables de entorno** (opcional):
+   ```
+   FLASK_ENV=production
+   FLASK_DEBUG=False
+   SECRET_KEY=tu-clave-super-secreta
+   ```
+
+5. **¡Listo!** Tu app estará disponible en la URL que Railway te asigne.
+
+### 💰 Plan Gratuito de Railway:
+- **500 horas de ejecución** por mes
+- **1GB de RAM**
+- **1GB de almacenamiento**
+- **Sin tarjeta de crédito requerida**
+- **Perfecto para proyectos personales y demos**
+
+### 🔧 Archivos Clave para Railway:
+- `Procfile` → Define cómo ejecutar la app
+- `requirements.txt` → Lista las dependencias de Python
+- `app.py` → Tu aplicación Flask principal
+- `.env.example` → Plantilla de variables de entorno
 
 ## 🧩 Estructura Modular
 
