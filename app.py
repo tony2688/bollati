@@ -15,8 +15,8 @@ import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'bollati-dev-secret-key-2024'
 
-# Configuración para desarrollo
-app.config['DEBUG'] = True
+# Configuración para producción
+app.config['DEBUG'] = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
 
 @app.route('/')
 def index():
@@ -26,29 +26,27 @@ def index():
     """
     return render_template('index.html')
 
-@app.route('/test')
-def test():
+@app.route('/about')
+def about():
     """
-    Página de prueba para verificar que Tailwind CSS funciona
+    Página sobre nosotros - Información adicional de la empresa
     """
-    with open('test.html', 'r', encoding='utf-8') as f:
-        return f.read()
+    return {
+        'empresa': 'Bollati y Asociados S.R.L.',
+        'descripcion': 'Empresa líder en desarrollo de software y soluciones tecnológicas',
+        'servicios': [
+            'Desarrollo Web',
+            'Aplicaciones Móviles', 
+            'Cloud Solutions',
+            'Consultoría IT'
+        ],
+        'ubicacion': 'Argentina',
+        'fundada': '2020',
+        'mensaje': 'Transformamos ideas en soluciones digitales innovadoras'
+    }
 
-@app.route('/debug')
-def debug():
-    """
-    Página de debug simplificada
-    """
-    with open('debug.html', 'r', encoding='utf-8') as f:
-        return f.read()
-
-@app.route('/simple')
-def simple():
-    """
-    Página muy simple sin dependencias externas
-    """
-    with open('simple.html', 'r', encoding='utf-8') as f:
-        return f.read()
+# Rutas de debug removidas para producción
+# Las rutas /test, /debug y /simple han sido eliminadas para optimizar la aplicación
 
 @app.route('/api/contact', methods=['POST'])
 def contact_form():
@@ -156,5 +154,8 @@ def get_portfolio():
     return jsonify(portfolio_items)
 
 if __name__ == '__main__':
-    # Ejecutar la aplicación en modo desarrollo
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Configuración para desarrollo local
+    # En producción, Gunicorn manejará la aplicación
+    port = int(os.environ.get('PORT', 5000))
+    debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    app.run(debug=debug_mode, host='0.0.0.0', port=port)

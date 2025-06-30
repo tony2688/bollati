@@ -19,11 +19,74 @@ Esta landing page corporativa está diseñada para **Bollati y Asociados S.R.L.*
 
 ## 🛠️ Stack Tecnológico
 
-- **Backend**: Python con Flask
+- **Backend**: Python con Flask + Gunicorn
 - **Frontend**: Tailwind CSS + JavaScript vanilla
 - **Tipografías**: Roboto Condensed + Source Sans Variable
 - **Iconos**: Font Awesome 6
+- **Despliegue**: Render (Production Ready)
 - **Integración**: APIs REST preparadas
+
+## 🚀 Despliegue en Render
+
+Este proyecto está **listo para producción** y configurado para desplegarse en Render:
+
+### Pasos para Desplegar:
+
+1. **Subir a GitHub**:
+   ```bash
+   git add .
+   git commit -m "Ready for production deployment"
+   git push origin main
+   ```
+
+2. **Conectar con Render**:
+   - Ve a [render.com](https://render.com)
+   - Conecta tu repositorio de GitHub
+   - Selecciona "Web Service"
+   - Render detectará automáticamente el `Procfile`
+
+3. **Configuración Automática**:
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `gunicorn app:app` (desde Procfile)
+   - **Python Version**: 3.11+
+
+### Variables de Entorno en Render:
+```
+FLASK_ENV=production
+FLASK_DEBUG=False
+SECRET_KEY=tu-clave-secreta-segura
+```
+
+## 🔧 Desarrollo Local
+
+### Instalación:
+```bash
+# Clonar repositorio
+git clone https://github.com/tu-usuario/bollati.git
+cd bollati
+
+# Crear entorno virtual
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Configurar variables de entorno
+cp .env.example .env
+# Editar .env con tus valores
+
+# Ejecutar aplicación
+python app.py
+```
+
+### Rutas Disponibles:
+- `/` - Landing page principal
+- `/about` - Información de la empresa (JSON)
+- `/api/contact` - Endpoint para formulario de contacto
+- `/api/testimonials` - Testimonios de clientes
+- `/api/portfolio` - Proyectos del portfolio
 
 ## 🧩 Estructura Modular
 
