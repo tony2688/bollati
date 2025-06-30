@@ -1,0 +1,83 @@
+<!-- HERO SECTION -->
+<section
+  id="inicio"
+  class="relative min-h-screen flex items-center justify-center text-center px-4 py-24 lg:py-32 overflow-hidden text-white"
+  role="banner"
+  aria-labelledby="hero-title"
+>
+  <!-- Fondo animado Vanta.js -->
+  <div id="vanta-bg" class="absolute inset-0 -z-10"></div>
+
+  <!-- Contenido principal centrado -->
+  <div class="z-10 container mx-auto px-4">
+    <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
+      
+      <!-- Ilustración (opcional) -->
+      <div class="lg:w-5/12 flex justify-center animate-fade-in-up">
+        <!-- Aquí puedes colocar una imagen SVG decorativa -->
+        <img src="/static/img/logob.png" alt="Desarrollo de software" class="w-full max-w-xs" />
+      </div>
+
+      <!-- Bloque de texto y botones -->
+      <div class="lg:w-7/12 text-center lg:text-left">
+        <!-- Título principal -->
+        <h1
+          id="hero-title"
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in-up tracking-tight"
+        >
+          <span class="block text-white drop-shadow-lg">Tecnología con experiencia</span>
+          <span class="block text-red-400 drop-shadow-lg">Presencia con Pasión</span>
+        </h1>
+
+        <!-- Subtítulo -->
+        <p class="text-lg md:text-xl lg:text-2xl mb-6 text-gray-100 font-medium animate-fade-in-up leading-relaxed">
+          Soluciones digitales a medida con las últimas tecnologías
+        </p>
+
+        <!-- Frase destacada -->
+        <p class="text-base md:text-lg mb-8 text-yellow-300 font-semibold animate-fade-in-up">
+          <em>"Código que Transforma Negocios"</em>
+        </p>
+
+        <!-- Botones CTA -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up mb-8">
+          <a
+            href="#contacto"
+            class="group bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-red-500/25 focus:outline-none focus:ring-4 focus:ring-red-500/50 border border-red-400"
+            role="button"
+            aria-label="Iniciar nuevo proyecto"
+          >
+            <i class="fas fa-rocket mr-2 group-hover:animate-bounce"></i>
+            Iniciar Proyecto
+          </a>
+
+          <a
+            href="#portfolio"
+            class="group bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-white/25 focus:outline-none focus:ring-4 focus:ring-white/50 backdrop-blur-sm"
+            role="button"
+            aria-label="Ver nuestro portfolio"
+          >
+            <i class="fas fa-eye mr-2"></i>
+            Ver Portfolio
+          </a>
+        </div>
+
+        <!-- Indicadores de confianza -->
+        <div class="flex flex-wrap justify-center lg:justify-start gap-6 text-gray-100 animate-fade-in-up mt-6">
+          <div class="flex items-center gap-2 text-sm font-medium bg-white/10 px-3 py-2 rounded-md backdrop-blur-sm">
+            <i class="fas fa-check-circle text-green-400"></i>
+            +50 Proyectos Exitosos
+          </div>
+          <div class="flex items-center gap-2 text-sm font-medium bg-white/10 px-3 py-2 rounded-md backdrop-blur-sm">
+            <i class="fas fa-clock text-blue-400"></i>
+            Entrega en Tiempo
+          </div>
+          <div class="flex items-center gap-2 text-sm font-medium bg-white/10 px-3 py-2 rounded-md backdrop-blur-sm">
+            <i class="fas fa-shield-alt text-yellow-400"></i>
+            Soporte 24/7
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

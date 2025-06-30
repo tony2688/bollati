@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Bollati y Asociados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "gray-900": "#1F2937",
+              "red-600": "#DC2626",
+              "secondary-light": "#F3F4F6",
+              "secondary-medium": "#9CA3AF",
+              "gray-600": "#666666",
+              "gray-800": "#333333",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .hero-gradient {
+        background: linear-gradient(135deg, #1F2937 0%, #111827 50%, #1F2937 100%);
+      }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-white">
+    <!-- Header simple -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4">
+            <h1 class="text-2xl font-bold text-gray-900">Bollati y Asociados S.R.L.</h1>
+        </div>
+    </header>
+
+    <!-- Hero section simple -->
+    <section class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6">Creamos Software que Impulsa tu Éxito</h1>
+            <p class="text-xl mb-8">Soluciones digitales a medida con las últimas tecnologías</p>
+            <button class="bg-red-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors">
+                Iniciar Proyecto
+            </button>
+        </div>
+    </section>
+
+    <!-- Contenido simple -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Nuestros Servicios</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Desarrollo Web</h3>
+                    <p class="text-gray-600">Aplicaciones web modernas y responsivas.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Software a Medida</h3>
+                    <p class="text-gray-600">Soluciones personalizadas para tu negocio.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Cloud Solutions</h3>
+                    <p class="text-gray-600">Migración y optimización en la nube.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        console.log('Debug page loaded successfully!');
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, page should be visible now.');
+        });
+    </script>
+</body>
+</html>

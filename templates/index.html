@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO y metaetiquetas -->
+    <title>Bollati y Asociados S.R.L. - Desarrollo de Software a Medida</title>
+    <meta name="description" content="Desarrollo de software a medida, aplicaciones web y soluciones cloud. Código que transforma negocios." />
+    <meta name="keywords" content="software, desarrollo, aplicaciones web, cloud, programación, tecnología, Argentina" />
+    <meta name="author" content="Bollati y Asociados S.R.L." />
+
+    <!-- Open Graph para compartir en redes sociales -->
+    <meta property="og:title" content="Bollati y Asociados S.R.L. - Desarrollo de Software a Medida" />
+    <meta property="og:description" content="Soluciones digitales personalizadas para impulsar tu negocio." />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS desde CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuración extendida de Tailwind (animaciones personalizadas y colores) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "red-600": "#E2242A",
+              "gray-900": "#2F4858",
+              "gray-600": "#333333",
+              "secondary-medium": "#666666",
+              "secondary-light": "#F8F9FA",
+            },
+            animation: {
+              "fade-in-up": "fadeInUp 0.6s ease-out forwards",
+              "slide-in-right": "slideInRight 0.8s ease-out forwards",
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              slideInRight: {
+                "0%": { opacity: "0", transform: "translateX(50px)" },
+                "100%": { opacity: "1", transform: "translateX(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+
+  <body class="font-body text-gray-800 antialiased bg-white">
+    <!-- Accesibilidad: Enlace para saltar directamente al contenido principal -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-red-600 text-white px-4 py-2 rounded z-50">
+      Saltar al contenido principal
+    </a>
+
+    <!-- Encabezado y navegación -->
+    {% include 'sections/header.html' %}
+
+    <!-- Contenido principal -->
+    <main id="main-content" role="main">
+      {% include 'sections/hero.html' %}
+      {% include 'sections/services.html' %}
+      {% include 'sections/portfolio.html' %}
+      {% include 'sections/technologies.html' %}
+      {% include 'sections/process.html' %}
+      {% include 'sections/testimonials.html' %}
+      {% include 'sections/contact.html' %}
+    </main>
+
+    <!-- Pie de página -->
+    {% include 'sections/footer.html' %}
+
+    <!-- Indicador de carga global -->
+    <div id="loading-indicator" class="fixed inset-0 bg-white/90 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+      <div class="text-center">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600 mx-auto mb-4"></div>
+        <p class="text-gray-600">Cargando...</p>
+      </div>
+    </div>
+
+    <!-- Scripts: Three.js + Vanta.js desde CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+
+    <!-- Script personalizado para inicializar Vanta -->
+    <script src="{{ url_for('static', filename='js/vanta.js') }}"></script>
+  </body>
+</html>

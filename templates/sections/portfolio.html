@@ -1,0 +1,846 @@
+<!-- PORTFOLIO SECTION -->
+<section
+  id="portfolio"
+  class="py-24 lg:py-40 bg-gradient-to-br from-slate-900 via-gray-900 to-black relative overflow-hidden"
+  role="region"
+  aria-labelledby="portfolio-title"
+>
+  <!-- Elementos decorativos de fondo mejorados -->
+  <div class="absolute inset-0 opacity-20">
+    <div
+      class="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-red-500 to-red-700 rounded-full blur-3xl animate-pulse"
+    ></div>
+    <div
+      class="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-br from-red-500 to-red-700 rounded-full blur-3xl animate-pulse"
+      style="animation-delay: 2s"
+    ></div>
+    <div
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-red-400 to-red-600 rounded-full blur-2xl opacity-50"
+    ></div>
+  </div>
+
+  <!-- Patrón geométrico de fondo -->
+  <div class="absolute inset-0 opacity-10">
+    <div
+      class="absolute top-0 left-0 w-full h-full"
+      style="
+        background-image: radial-gradient(
+            circle at 25% 25%,
+            #dc2626 1px,
+            transparent 1px
+          ),
+          radial-gradient(circle at 75% 75%, #dc2626 1px, transparent 1px);
+        background-size: 80px 80px;
+      "
+    ></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <!-- Header de la sección mejorado -->
+    <header class="text-center mb-24">
+      <div
+        class="inline-flex items-center gap-4 bg-gradient-to-r from-red-600/15 to-gray-900/10 backdrop-blur-sm px-8 py-4 rounded-full mb-8 animate-fade-in-up border border-red-600/20 shadow-lg"
+      >
+        <div
+          class="w-8 h-8 bg-gradient-to-br from-red-600 to-red-700 rounded-full flex items-center justify-center"
+        >
+          <i class="fas fa-briefcase text-white text-sm" aria-hidden="true"></i>
+        </div>
+        <span class="text-red-600 font-bold text-base uppercase tracking-widest"
+          >Nuestros Trabajos</span
+        >
+      </div>
+
+      <h2
+        id="portfolio-title"
+        class="font-heading text-6xl md:text-7xl lg:text-8xl font-black text-white mb-10 leading-tight animate-fade-in-up drop-shadow-lg"
+        style="
+          animation-delay: 0.2s;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        "
+      >
+        Nuestro
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400 drop-shadow-xl"
+          style="text-shadow: 2px 2px 8px rgba(59, 130, 246, 0.5)"
+          >Portfolio</span
+        >
+      </h2>
+
+      <p
+        class="text-2xl md:text-3xl lg:text-4xl text-gray-100 max-w-5xl mx-auto leading-relaxed animate-fade-in-up font-semibold"
+        style="
+          animation-delay: 0.4s;
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        "
+      >
+        Descubre algunos de nuestros
+        <span
+          class="text-cyan-300 font-bold"
+          style="text-shadow: 1px 1px 3px rgba(6, 182, 212, 0.5)"
+          >proyectos más destacados</span
+        >
+        que demuestran nuestra experiencia en
+        <span
+          class="text-white font-bold"
+          style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8)"
+          >desarrollo de software</span
+        >
+        y soluciones tecnológicas innovadoras
+      </p>
+    </header>
+
+    <!-- Filtros de Portfolio -->
+    <div
+      class="flex flex-wrap justify-center gap-4 mb-16 animate-fade-in-up"
+      style="animation-delay: 0.6s"
+    >
+      <button
+        class="portfolio-filter active bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:from-red-700 hover:to-red-800 transform hover:scale-105 shadow-lg"
+        data-filter="all"
+      >
+        <i class="fas fa-th mr-2" aria-hidden="true"></i>
+        Todos
+      </button>
+      <button
+        class="portfolio-filter bg-gray-800/80 backdrop-blur-sm text-gray-300 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-red-600 hover:text-white transform hover:scale-105 shadow-lg border border-gray-600/50"
+        data-filter="web"
+      >
+        <i class="fas fa-globe mr-2" aria-hidden="true"></i>
+        Aplicaciones Web
+      </button>
+      <button
+        class="portfolio-filter bg-gray-800/80 backdrop-blur-sm text-gray-300 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-blue-600 hover:text-white transform hover:scale-105 shadow-lg border border-gray-600/50"
+        data-filter="software"
+      >
+        <i class="fas fa-desktop mr-2" aria-hidden="true"></i>
+        Software a Medida
+      </button>
+      <button
+        class="portfolio-filter bg-gray-800/80 backdrop-blur-sm text-gray-300 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-blue-600 hover:text-white transform hover:scale-105 shadow-lg border border-gray-600/50"
+        data-filter="ecommerce"
+      >
+        <i class="fas fa-shopping-cart mr-2" aria-hidden="true"></i>
+        E-commerce
+      </button>
+      <button
+        class="portfolio-filter bg-gray-800/80 backdrop-blur-sm text-gray-300 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-blue-600 hover:text-white transform hover:scale-105 shadow-lg border border-gray-600/50"
+        data-filter="mobile"
+      >
+        <i class="fas fa-mobile-alt mr-2" aria-hidden="true"></i>
+        Aplicaciones Móviles
+      </button>
+    </div>
+
+    <!-- Grid de Proyectos -->
+    <div
+      class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12"
+      id="portfolio-grid"
+    >
+      <!-- Proyecto 1: Sistema de Gestión Empresarial -->
+      <article
+        class="portfolio-item group bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-4 hover:rotate-1 border border-gray-200/50 hover:border-red-600/30 animate-fade-in-up"
+        style="animation-delay: 0.8s"
+        data-category="software web"
+        role="article"
+        aria-labelledby="proyecto-gestion-title"
+      >
+        <!-- Imagen del proyecto -->
+        <div
+          class="relative overflow-hidden h-64 bg-gradient-to-br from-gray-100 to-gray-200"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-red-600/20 to-gray-900/20 flex items-center justify-center"
+          >
+            <div class="text-center">
+              <i
+                class="fas fa-chart-line text-6xl text-gray-600 mb-4"
+                aria-hidden="true"
+              ></i>
+              <p class="text-gray-700 font-semibold text-lg">
+                Sistema de Gestión
+              </p>
+            </div>
+          </div>
+          <div class="absolute top-4 right-4">
+            <span
+              class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
+            >
+              Software a Medida
+            </span>
+          </div>
+        </div>
+
+        <!-- Contenido del proyecto -->
+        <div class="p-8">
+          <header class="mb-6">
+            <h3
+              id="proyecto-gestion-title"
+              class="font-heading text-3xl lg:text-4xl font-black text-gray-900 mb-4 group-hover:text-red-600 transition-colors duration-500 leading-tight"
+              style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1)"
+            >
+              Sistema de Gestión Empresarial
+            </h3>
+            <p class="text-gray-800 text-xl leading-relaxed font-semibold">
+              Plataforma integral para la gestión de recursos humanos,
+              inventarios y finanzas con
+              <span class="text-red-700 font-bold"
+                >dashboard en tiempo real</span
+              >
+              y reportes avanzados.
+            </p>
+          </header>
+
+          <!-- Tecnologías utilizadas -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span
+              class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+              >Python</span
+            >
+            <span
+              class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+              >Django</span
+            >
+            <span
+              class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+              >PostgreSQL</span
+            >
+            <span
+              class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+              >React</span
+            >
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="flex gap-4">
+            <a
+              href="#contacto"
+              class="flex-1 bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-3 rounded-xl font-semibold text-center transition-all duration-300 hover:from-red-700 hover:to-red-800 transform hover:scale-105 shadow-lg"
+              aria-label="Ver detalles del proyecto de gestión empresarial"
+            >
+              <i class="fas fa-eye mr-2" aria-hidden="true"></i>
+              Ver Detalles
+            </a>
+            <a
+              href="#contacto"
+              class="bg-white/80 border-2 border-red-600 text-red-600 px-4 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-red-600 hover:text-white transform hover:scale-105"
+              aria-label="Solicitar información sobre proyecto similar"
+            >
+              <i class="fas fa-info-circle" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Proyecto 2: E-commerce Avanzado -->
+      <article
+        class="portfolio-item group bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-4 hover:-rotate-1 border border-gray-200/50 hover:border-red-600/30 animate-fade-in-up"
+        style="animation-delay: 1s"
+        data-category="ecommerce web"
+        role="article"
+        aria-labelledby="proyecto-ecommerce-title"
+      >
+        <!-- Imagen del proyecto -->
+        <div
+          class="relative overflow-hidden h-64 bg-gradient-to-br from-red-100 to-red-200"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-red-600/20 to-gray-900/20 flex items-center justify-center"
+          >
+            <div class="text-center">
+              <i
+                class="fas fa-shopping-cart text-6xl text-gray-600 mb-4"
+                aria-hidden="true"
+              ></i>
+              <p class="text-gray-700 font-semibold text-lg">E-commerce</p>
+            </div>
+          </div>
+          <div class="absolute top-4 right-4">
+            <span
+              class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
+            >
+              E-commerce
+            </span>
+          </div>
+        </div>
+
+        <!-- Contenido del proyecto -->
+        <div class="p-8">
+          <header class="mb-6">
+            <h3
+              id="proyecto-ecommerce-title"
+              class="font-heading text-2xl lg:text-3xl font-black text-gray-900 mb-4 group-hover:text-red-600 transition-colors duration-500 leading-tight"
+            >
+              Plataforma E-commerce Multivendedor
+            </h3>
+            <p class="text-gray-700 text-lg leading-relaxed">
+              Marketplace completo con
+              <span class="text-red-600 font-semibold"
+                >múltiples vendedores</span
+              >, sistema de pagos integrado y gestión avanzada de inventarios.
+            </p>
+          </header>
+
+          <!-- Tecnologías utilizadas -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span
+              class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+              >Node.js</span
+            >
+            <span
+              class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+              >Express</span
+            >
+            <span
+              class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+              >MongoDB</span
+            >
+            <span
+              class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+              >Vue.js</span
+            >
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="flex gap-4">
+            <a
+              href="#contacto"
+              class="flex-1 bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-3 rounded-xl font-semibold text-center transition-all duration-300 hover:from-red-700 hover:to-red-800 transform hover:scale-105 shadow-lg"
+              aria-label="Ver detalles del proyecto e-commerce"
+            >
+              <i class="fas fa-eye mr-2" aria-hidden="true"></i>
+              Ver Detalles
+            </a>
+            <a
+              href="#contacto"
+              class="bg-white/80 border-2 border-red-600 text-red-600 px-4 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-red-600 hover:text-white transform hover:scale-105"
+              aria-label="Solicitar información sobre proyecto similar"
+            >
+              <i class="fas fa-info-circle" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Proyecto 3: Aplicación Móvil -->
+      <article
+        class="portfolio-item group bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-4 hover:rotate-1 border border-gray-200/50 hover:border-red-600/30 animate-fade-in-up"
+        style="animation-delay: 1.2s"
+        data-category="mobile"
+        role="article"
+        aria-labelledby="proyecto-mobile-title"
+      >
+        <!-- Imagen del proyecto -->
+        <div
+          class="relative overflow-hidden h-64 bg-gradient-to-br from-green-100 to-teal-200"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-red-600/20 to-gray-900/20 flex items-center justify-center"
+          >
+            <div class="text-center">
+              <i
+                class="fas fa-mobile-alt text-6xl text-gray-600 mb-4"
+                aria-hidden="true"
+              ></i>
+              <p class="text-gray-700 font-semibold text-lg">App Móvil</p>
+            </div>
+          </div>
+          <div class="absolute top-4 right-4">
+            <span
+              class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
+            >
+              Móvil
+            </span>
+          </div>
+        </div>
+
+        <!-- Contenido del proyecto -->
+        <div class="p-8">
+          <header class="mb-6">
+            <h3
+              id="proyecto-mobile-title"
+              class="font-heading text-2xl lg:text-3xl font-black text-gray-900 mb-4 group-hover:text-red-600 transition-colors duration-500 leading-tight"
+            >
+              App de Delivery y Logística
+            </h3>
+            <p class="text-gray-700 text-lg leading-relaxed">
+              Aplicación móvil para
+              <span class="text-red-600 font-semibold"
+                >gestión de entregas</span
+              >
+              con tracking en tiempo real y optimización de rutas.
+            </p>
+          </header>
+
+          <!-- Tecnologías utilizadas -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span
+              class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium"
+              >React Native</span
+            >
+            <span
+              class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium"
+              >Firebase</span
+            >
+            <span
+              class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium"
+              >Google Maps</span
+            >
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="flex gap-4">
+            <a
+              href="#contacto"
+              class="flex-1 bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-3 rounded-xl font-semibold text-center transition-all duration-300 hover:from-red-700 hover:to-red-800 transform hover:scale-105 shadow-lg"
+              aria-label="Ver detalles del proyecto móvil"
+            >
+              <i class="fas fa-eye mr-2" aria-hidden="true"></i>
+              Ver Detalles
+            </a>
+            <a
+              href="#contacto"
+              class="bg-white/80 border-2 border-red-600 text-red-600 px-4 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-red-600 hover:text-white transform hover:scale-105"
+              aria-label="Solicitar información sobre proyecto similar"
+            >
+              <i class="fas fa-info-circle" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Proyecto 4: Portal Web Corporativo -->
+      <article
+        class="portfolio-item group bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-4 hover:-rotate-1 border border-gray-200/50 hover:border-red-600/30 animate-fade-in-up"
+        style="animation-delay: 1.4s"
+        data-category="web"
+        role="article"
+        aria-labelledby="proyecto-portal-title"
+      >
+        <!-- Imagen del proyecto -->
+        <div
+          class="relative overflow-hidden h-64 bg-gradient-to-br from-purple-100 to-pink-200"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-red-600/20 to-gray-900/20 flex items-center justify-center"
+          >
+            <div class="text-center">
+              <i
+                class="fas fa-globe text-6xl text-gray-600 mb-4"
+                aria-hidden="true"
+              ></i>
+              <p class="text-gray-700 font-semibold text-lg">Portal Web</p>
+            </div>
+          </div>
+          <div class="absolute top-4 right-4">
+            <span
+              class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
+            >
+              Web
+            </span>
+          </div>
+        </div>
+
+        <!-- Contenido del proyecto -->
+        <div class="p-8">
+          <header class="mb-6">
+            <h3
+              id="proyecto-portal-title"
+              class="font-heading text-2xl lg:text-3xl font-black text-gray-900 mb-4 group-hover:text-red-600 transition-colors duration-500 leading-tight"
+            >
+              Portal Web Corporativo
+            </h3>
+            <p class="text-gray-700 text-lg leading-relaxed">
+              Sitio web corporativo con
+              <span class="text-red-600 font-semibold">CMS personalizado</span>,
+              blog integrado y sistema de gestión de contenidos.
+            </p>
+          </header>
+
+          <!-- Tecnologías utilizadas -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span
+              class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium"
+              >WordPress</span
+            >
+            <span
+              class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium"
+              >PHP</span
+            >
+            <span
+              class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium"
+              >MySQL</span
+            >
+            <span
+              class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium"
+              >jQuery</span
+            >
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="flex gap-4">
+            <a
+              href="#contacto"
+              class="flex-1 bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-3 rounded-xl font-semibold text-center transition-all duration-300 hover:from-red-700 hover:to-red-800 transform hover:scale-105 shadow-lg"
+              aria-label="Ver detalles del proyecto portal web"
+            >
+              <i class="fas fa-eye mr-2" aria-hidden="true"></i>
+              Ver Detalles
+            </a>
+            <a
+              href="#contacto"
+              class="bg-white/80 border-2 border-red-600 text-red-600 px-4 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-red-600 hover:text-white transform hover:scale-105"
+              aria-label="Solicitar información sobre proyecto similar"
+            >
+              <i class="fas fa-info-circle" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Proyecto 5: Sistema de Análisis de Datos -->
+      <article
+        class="portfolio-item group bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-4 hover:rotate-1 border border-gray-200/50 hover:border-red-600/30 animate-fade-in-up"
+        style="animation-delay: 1.6s"
+        data-category="software"
+        role="article"
+        aria-labelledby="proyecto-analytics-title"
+      >
+        <!-- Imagen del proyecto -->
+        <div
+          class="relative overflow-hidden h-64 bg-gradient-to-br from-yellow-100 to-orange-200"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-red-600/20 to-gray-900/20 flex items-center justify-center"
+          >
+            <div class="text-center">
+              <i
+                class="fas fa-chart-bar text-6xl text-gray-600 mb-4"
+                aria-hidden="true"
+              ></i>
+              <p class="text-gray-700 font-semibold text-lg">Analytics</p>
+            </div>
+          </div>
+          <div class="absolute top-4 right-4">
+            <span
+              class="bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
+            >
+              Analytics
+            </span>
+          </div>
+        </div>
+
+        <!-- Contenido del proyecto -->
+        <div class="p-8">
+          <header class="mb-6">
+            <h3
+              id="proyecto-analytics-title"
+              class="font-heading text-2xl lg:text-3xl font-black text-gray-900 mb-4 group-hover:text-red-600 transition-colors duration-500 leading-tight"
+            >
+              Sistema de Análisis de Datos
+            </h3>
+            <p class="text-gray-700 text-lg leading-relaxed">
+              Plataforma de
+              <span class="text-red-600 font-semibold"
+                >business intelligence</span
+              >
+              con dashboards interactivos y reportes automatizados.
+            </p>
+          </header>
+
+          <!-- Tecnologías utilizadas -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span
+              class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium"
+              >Python</span
+            >
+            <span
+              class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium"
+              >Pandas</span
+            >
+            <span
+              class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium"
+              >D3.js</span
+            >
+            <span
+              class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium"
+              >PostgreSQL</span
+            >
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="flex gap-4">
+            <a
+              href="#contacto"
+              class="flex-1 bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-3 rounded-xl font-semibold text-center transition-all duration-300 hover:from-red-700 hover:to-red-800 transform hover:scale-105 shadow-lg"
+              aria-label="Ver detalles del proyecto de análisis de datos"
+            >
+              <i class="fas fa-eye mr-2" aria-hidden="true"></i>
+              Ver Detalles
+            </a>
+            <a
+              href="#contacto"
+              class="bg-white/80 border-2 border-red-600 text-red-600 px-4 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-red-600 hover:text-white transform hover:scale-105"
+              aria-label="Solicitar información sobre proyecto similar"
+            >
+              <i class="fas fa-info-circle" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Proyecto 6: API REST Avanzada -->
+      <article
+        class="portfolio-item group bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-4 hover:-rotate-1 border border-gray-200/50 hover:border-red-600/30 animate-fade-in-up"
+        style="animation-delay: 1.8s"
+        data-category="software web"
+        role="article"
+        aria-labelledby="proyecto-api-title"
+      >
+        <!-- Imagen del proyecto -->
+        <div
+          class="relative overflow-hidden h-64 bg-gradient-to-br from-red-100 to-red-200"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-red-600/20 to-gray-900/20 flex items-center justify-center"
+          >
+            <div class="text-center">
+              <i
+                class="fas fa-code text-6xl text-gray-600 mb-4"
+                aria-hidden="true"
+              ></i>
+              <p class="text-gray-700 font-semibold text-lg">API REST</p>
+            </div>
+          </div>
+          <div class="absolute top-4 right-4">
+            <span
+              class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
+            >
+              API
+            </span>
+          </div>
+        </div>
+
+        <!-- Contenido del proyecto -->
+        <div class="p-8">
+          <header class="mb-6">
+            <h3
+              id="proyecto-api-title"
+              class="font-heading text-2xl lg:text-3xl font-black text-gray-900 mb-4 group-hover:text-red-600 transition-colors duration-500 leading-tight"
+            >
+              API REST Microservicios
+            </h3>
+            <p class="text-gray-700 text-lg leading-relaxed">
+              Arquitectura de
+              <span class="text-red-600 font-semibold">microservicios</span>
+              escalable con documentación automática y autenticación JWT.
+            </p>
+          </header>
+
+          <!-- Tecnologías utilizadas -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span
+              class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+              >FastAPI</span
+            >
+            <span
+              class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+              >Docker</span
+            >
+            <span
+              class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+              >Redis</span
+            >
+            <span
+              class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+              >AWS</span
+            >
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="flex gap-4">
+            <a
+              href="#contacto"
+              class="flex-1 bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-3 rounded-xl font-semibold text-center transition-all duration-300 hover:from-red-700 hover:to-red-800 transform hover:scale-105 shadow-lg"
+              aria-label="Ver detalles del proyecto API"
+            >
+              <i class="fas fa-eye mr-2" aria-hidden="true"></i>
+              Ver Detalles
+            </a>
+            <a
+              href="#contacto"
+              class="bg-white/80 border-2 border-red-600 text-red-600 px-4 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-red-600 hover:text-white transform hover:scale-105"
+              aria-label="Solicitar información sobre proyecto similar"
+            >
+              <i class="fas fa-info-circle" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Estadísticas del Portfolio -->
+    <div
+      class="mt-24 grid md:grid-cols-4 gap-8 animate-fade-in-up"
+      style="animation-delay: 2s"
+    >
+      <div class="text-center">
+        <div
+          class="w-20 h-20 bg-gradient-to-br from-red-600 to-red-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+        >
+          <i
+            class="fas fa-project-diagram text-white text-2xl"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <h3
+          class="font-heading text-5xl font-black text-white mb-2"
+          style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8)"
+        >
+          50+
+        </h3>
+        <p
+          class="text-gray-100 font-bold text-lg"
+          style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7)"
+        >
+          Proyectos Completados
+        </p>
+      </div>
+
+      <div class="text-center">
+        <div
+          class="w-20 h-20 bg-gradient-to-br from-red-600 to-red-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+        >
+          <i class="fas fa-users text-white text-2xl" aria-hidden="true"></i>
+        </div>
+        <h3
+          class="font-heading text-5xl font-black text-white mb-2"
+          style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8)"
+        >
+          30+
+        </h3>
+        <p
+          class="text-gray-100 font-bold text-lg"
+          style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7)"
+        >
+          Clientes Satisfechos
+        </p>
+      </div>
+
+      <div class="text-center">
+        <div
+          class="w-20 h-20 bg-gradient-to-br from-red-600 to-red-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+        >
+          <i class="fas fa-clock text-white text-2xl" aria-hidden="true"></i>
+        </div>
+        <h3
+          class="font-heading text-5xl font-black text-white mb-2"
+          style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8)"
+        >
+          5+
+        </h3>
+        <p
+          class="text-gray-100 font-bold text-lg"
+          style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7)"
+        >
+          Años de Experiencia
+        </p>
+      </div>
+
+      <div class="text-center">
+        <div
+          class="w-20 h-20 bg-gradient-to-br from-red-600 to-red-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+        >
+          <i class="fas fa-award text-white text-2xl" aria-hidden="true"></i>
+        </div>
+        <h3
+          class="font-heading text-5xl font-black text-white mb-2"
+          style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8)"
+        >
+          100%
+        </h3>
+        <p
+          class="text-gray-100 font-bold text-lg"
+          style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7)"
+        >
+          Proyectos Exitosos
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action Section -->
+  <div class="mt-32 relative">
+    <!-- Fondo distintivo para el CTA -->
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-red-50/30 opacity-80"
+    ></div>
+
+    <!-- Elementos decorativos del CTA -->
+    <div class="absolute inset-0 opacity-10">
+      <div
+        class="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-red-500 to-red-700 rounded-full blur-3xl animate-pulse"
+      ></div>
+      <div
+        class="absolute bottom-10 right-10 w-40 h-40 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full blur-3xl animate-pulse"
+        style="animation-delay: 1s"
+      ></div>
+      <div
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-br from-red-400 to-gray-600 rounded-full blur-2xl opacity-50"
+      ></div>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript para filtros del portfolio -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".portfolio-filter");
+    const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const filter = this.getAttribute("data-filter");
+
+        // Actualizar botones activos
+        filterButtons.forEach((btn) => {
+          btn.classList.remove(
+            "active",
+            "bg-gradient-to-r",
+            "from-red-600",
+            "to-red-700",
+            "text-white"
+          );
+          btn.classList.add("bg-gray-800/80", "text-gray-300");
+        });
+
+        this.classList.add(
+          "active",
+          "bg-gradient-to-r",
+          "from-red-600",
+          "to-red-700",
+          "text-white"
+        );
+        this.classList.remove("bg-gray-800/80", "text-gray-300");
+
+        // Filtrar elementos
+        portfolioItems.forEach((item) => {
+          const categories = item.getAttribute("data-category").split(" ");
+
+          if (filter === "all" || categories.includes(filter)) {
+            item.style.display = "block";
+            item.style.opacity = "0";
+            setTimeout(() => {
+              item.style.opacity = "1";
+            }, 100);
+          } else {
+            item.style.opacity = "0";
+            setTimeout(() => {
+              item.style.display = "none";
+            }, 300);
+          }
+        });
+      });
+    });
+  });
+</script>
