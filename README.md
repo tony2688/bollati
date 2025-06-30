@@ -26,145 +26,191 @@ Esta landing page corporativa está diseñada para **Bollati y Asociados S.R.L.*
 - **Despliegue**: Render (Production Ready)
 - **Integración**: APIs REST preparadas
 
-## 🚀 Despliegue en Railway (Sin Tarjeta de Crédito)
+## 🚀 Despliegue en Railway.app (Sin Tarjeta de Crédito)
 
 Este proyecto está **listo para Railway.app** y configurado para desplegarse sin necesidad de tarjeta de crédito:
 
-### 🎯 Pasos para Desplegar en Railway:
+### 🎯 Pasos Completos para Desplegar:
 
-1. **Subir a GitHub**:
+1. **Preparar y Subir a GitHub**:
    ```bash
+   git init
    git add .
    git commit -m "Ready for Railway deployment"
-   git push origin main
+   git branch -M main
+   git remote add origin https://github.com/tu-usuario/bollati.git
+   git push -u origin main
    ```
 
 2. **Conectar con Railway**:
-   - Ve a [railway.app](https://railway.app)
-   - Haz clic en "Start a New Project"
+   - Ve a [Railway.app](https://railway.app)
+   - Inicia sesión con GitHub (sin tarjeta requerida)
+   - Haz clic en "New Project"
    - Selecciona "Deploy from GitHub repo"
-   - Conecta tu repositorio
-   - Railway detectará automáticamente el `Procfile`
+   - Elige tu repositorio `bollati`
 
 3. **Configuración Automática**:
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `python app.py` (desde Procfile)
-   - **Python Version**: Detectada automáticamente
+   - Railway detecta automáticamente:
+     - `requirements.txt` → Instala dependencias Flask
+     - `Procfile` → Comando: `web: python app.py`
+     - Puerto automático via `os.environ["PORT"]`
+     - Host configurado como `0.0.0.0`
 
-### Variables de Entorno en Railway:
-```
-FLASK_ENV=production
-FLASK_DEBUG=False
-SECRET_KEY=tu-clave-secreta-muy-segura
-PORT=5000
-```
+4. **Variables de Entorno Requeridas**:
+   En el dashboard de Railway, ve a "Variables" y agrega:
+   ```
+   FLASK_ENV=production
+   FLASK_DEBUG=False
+   SECRET_KEY=una-clave-secreta-segura-unica
+   ```
+
+5. **Acceso a tu Aplicación**:
+   - Railway generará una URL automáticamente
+   - Formato: `https://tu-proyecto.up.railway.app`
+   - Rutas disponibles:
+     - `/` → Landing page principal
+     - `/about` → Información de la empresa
+     - `/api/testimonials` → API de testimonios
+     - `/api/portfolio` → API de portfolio
 
 ### 💡 Ventajas de Railway:
 - ✅ **Sin tarjeta de crédito** para proyectos pequeños
 - ✅ **Deploy automático** desde GitHub
 - ✅ **HTTPS gratuito** incluido
 - ✅ **Dominio personalizado** disponible
-- ✅ **Logs en tiempo real**
+- ✅ **Logs en tiempo real** y monitoreo
+- ✅ **Flask nativo** sin necesidad de Gunicorn
 
 ## 🔧 Desarrollo Local
 
-### 📋 Requisitos:
-- Python 3.8+
-- Git
+### Requisitos Previos
+- Python 3.8+ instalado
+- pip (gestor de paquetes de Python)
+- Git para control de versiones
 
-### 🚀 Instalación y Ejecución:
+### 📋 Instalación Paso a Paso
+
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/tu-usuario/bollati.git
+   cd bollati
+   ```
+
+2. **Crea un entorno virtual** (recomendado):
+   ```bash
+   # En Windows
+   python -m venv venv
+   venv\Scripts\activate
+   
+   # En macOS/Linux
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. **Instala las dependencias**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Configura las variables de entorno**:
+   ```bash
+   # En Windows
+   copy .env.example .env
+   
+   # En macOS/Linux
+   cp .env.example .env
+   ```
+   
+   Edita el archivo `.env` con tus configuraciones:
+   ```ini
+   FLASK_ENV=development
+   FLASK_DEBUG=True
+   SECRET_KEY=tu-clave-secreta-local
+   PORT=5000
+   ```
+
+5. **Ejecuta la aplicación**:
+   ```bash
+   python app.py
+   ```
+
+6. **Accede a la aplicación**:
+   - **Local**: `http://localhost:5000`
+   - **Railway**: `https://tu-proyecto.up.railway.app`
+
+### 🚀 Subir a GitHub y Conectar a Railway
+
 ```bash
-# 1. Clonar repositorio
-git clone https://github.com/tu-usuario/bollati.git
-cd bollati
-
-# 2. Crear entorno virtual
-python -m venv venv
-
-# 3. Activar entorno virtual
-# En Windows:
-venv\Scripts\activate
-# En Linux/Mac:
-source venv/bin/activate
-
-# 4. Instalar dependencias
-pip install -r requirements.txt
-
-# 5. Configurar variables de entorno
-copy .env.example .env     # Windows
-cp .env.example .env       # Linux/Mac
-
-# 6. Ejecutar aplicación
-python app.py
-```
-
-### 🌐 Acceder a la aplicación:
-- **Local**: http://localhost:5000
-- **Railway**: Tu URL será asignada automáticamente
-
-### 📤 Subir a GitHub:
-```bash
-# Inicializar repositorio (si es nuevo)
+# Inicializar repositorio Git
 git init
-git remote add origin https://github.com/tu-usuario/tu-repo.git
-
-# Subir cambios
 git add .
-git commit -m "Initial commit - Flask app ready for Railway"
+git commit -m "Initial commit: Bollati Flask app ready for Railway"
+
+# Conectar con GitHub
+git branch -M main
+git remote add origin https://github.com/tu-usuario/bollati.git
 git push -u origin main
 ```
 
-### 🛣️ Rutas Disponibles:
-- `/` - Landing page principal
-- `/about` - Información de la empresa (JSON)
-- `/api/contact` - Endpoint para formulario de contacto
-- `/api/testimonials` - Testimonios de clientes
-- `/api/portfolio` - Proyectos del portfolio
+### 🛠️ Comandos Útiles
 
-## 🚂 Guía Completa para Railway
+```bash
+# Activar entorno virtual
+# Windows: venv\Scripts\activate
+# macOS/Linux: source venv/bin/activate
 
-### 🎯 Paso a Paso para Deploy:
+# Ejecutar en modo desarrollo
+python app.py
 
-1. **Preparar el proyecto** (ya está listo):
-   - ✅ `requirements.txt` con Flask y dependencias
-   - ✅ `Procfile` con `web: python app.py`
-   - ✅ `.env.example` con variables necesarias
-   - ✅ `app.py` configurado para producción
+# Verificar dependencias instaladas
+pip list
 
-2. **Subir a GitHub**:
-   ```bash
-   git add .
-   git commit -m "Ready for Railway"
-   git push origin main
-   ```
+# Desactivar entorno virtual
+deactivate
 
-3. **Conectar con Railway**:
-   - Ir a [railway.app](https://railway.app)
-   - "Start a New Project" → "Deploy from GitHub repo"
-   - Seleccionar tu repositorio
-   - Railway detecta automáticamente la configuración
+# Actualizar requirements.txt (si agregas nuevas dependencias)
+pip freeze > requirements.txt
+```
 
-4. **Configurar variables de entorno** (opcional):
-   ```
-   FLASK_ENV=production
-   FLASK_DEBUG=False
-   SECRET_KEY=tu-clave-super-secreta
-   ```
+## 🌐 Rutas Disponibles
 
-5. **¡Listo!** Tu app estará disponible en la URL que Railway te asigne.
+| Ruta | Método | Descripción |
+|------|--------|-------------|
+| `/` | GET | Landing page principal con todas las secciones |
+| `/about` | GET | Información detallada de la empresa (JSON) |
+| `/api/contact` | POST | Endpoint para procesar formulario de contacto |
+| `/api/testimonials` | GET | API que retorna testimonios de clientes |
+| `/api/portfolio` | GET | API que retorna proyectos del portfolio |
 
-### 💰 Plan Gratuito de Railway:
-- **500 horas de ejecución** por mes
-- **1GB de RAM**
-- **1GB de almacenamiento**
-- **Sin tarjeta de crédito requerida**
-- **Perfecto para proyectos personales y demos**
+## 🔗 Enlaces de la Aplicación
 
-### 🔧 Archivos Clave para Railway:
-- `Procfile` → Define cómo ejecutar la app
-- `requirements.txt` → Lista las dependencias de Python
-- `app.py` → Tu aplicación Flask principal
-- `.env.example` → Plantilla de variables de entorno
+- **Desarrollo Local**: `http://localhost:5000`
+- **Producción Railway**: `https://tu-proyecto.up.railway.app`
+- **Repositorio GitHub**: `https://github.com/tu-usuario/bollati`
+
+## 📝 Variables de Entorno Necesarias
+
+```ini
+# Configuración de Flask
+FLASK_ENV=production          # development para local
+FLASK_DEBUG=False            # True para local
+SECRET_KEY=una-clave-secreta-segura
+
+# Puerto (Railway lo asigna automáticamente)
+PORT=5000                    # Solo para desarrollo local
+```
+
+## ✅ Checklist de Despliegue
+
+- [x] `app.py` configurado con `host='0.0.0.0'` y `os.environ["PORT"]`
+- [x] `requirements.txt` con Flask y dependencias mínimas
+- [x] `Procfile` con comando `web: python app.py`
+- [x] `.env.example` con variables de producción
+- [x] Rutas `/` y `/about` implementadas
+- [x] Flask nativo sin Gunicorn
+- [x] Listo para Railway.app sin tarjeta de crédito
+
+
 
 ## 🧩 Estructura Modular
 
