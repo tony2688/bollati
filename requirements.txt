@@ -1,13 +1,10 @@
-# Bollati y Asociados S.R.L. - Dependencias del Proyecto
-# Dependencias mínimas para producción
+# Bollati y Asociados S.R.L. - Dependencias para Railway
+# Dependencias mínimas para Railway.app
 
 # Framework web principal
 Flask==2.3.3
 
-# Servidor WSGI para producción
-gunicorn==21.2.0
-
-# Dependencias core de Flask
+# Dependencias core de Flask (se instalan automáticamente con Flask)
 Werkzeug==2.3.7
 Jinja2==3.1.2
 MarkupSafe==2.1.3
